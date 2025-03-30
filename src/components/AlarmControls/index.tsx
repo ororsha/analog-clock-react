@@ -22,7 +22,9 @@ const AlarmControls: React.FC<AlarmControlsProps> = ({ alarms, addAlarm }) => {
             setTimeout(() => setError(''), 3000);
         } else {
             addAlarm(time);
-            alarmRef.current.value = '';
+            if (alarmRef.current) {
+                alarmRef.current.value = '';
+            }
         }
     };
 
